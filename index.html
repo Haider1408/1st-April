@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Storybook Front Cover</title>
+<style>
+  body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    background-color: #f8f4f0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+  }
+
+  .storybook-container {
+    border: 10px solid #d9c9b8;
+    border-radius: 20px;
+    width: 400px;
+    height: 600px;
+    background-color: #fff;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+
+  .cover-image {
+    width: 90%;
+    height: auto;
+    border-radius: 15px;
+    margin-bottom: 30px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  }
+
+  .yes-button {
+    padding: 15px 40px;
+    background-color: #ff6b81;
+    color: white;
+    font-size: 1.5rem;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    position: relative;
+    z-index: 10;
+    transition: transform 0.2s ease;
+  }
+
+  .yes-button:active {
+    transform: scale(1.2);
+  }
+
+  .heart {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-color: #ff6b81;
+    clip-path: polygon(
+      50% 0%, 
+      61% 10%, 
+      70% 20%, 
+      80% 30%, 
+      90% 50%, 
+      80% 70%, 
+      70% 80%, 
+      50% 100%, 
+      30% 80%, 
+      20% 70%, 
+      10% 50%, 
+      20% 30%, 
+      30% 20%, 
+      39% 10%
+    );
+    animation: floatUp 1s linear forwards;
+  }
+
+  @keyframes floatUp {
+    0% {
+      opacity: 1;
+      transform: translate(0, 0) scale(1);
+    }
+    100% {
+      opacity: 0;
+      transform: translate(var(--x), -200px) scale(2);
+    }
+  }
+</style>
+</head>
+<body>
+
+<div class="storybook-container">
+  <!-- Front Cover Image -->
+  <img src="hands_holding_lilies.jpg" alt="Hands holding lily bouquet" class="cover-image">
+  
+  <!-- Yes Button -->
+  <button class="yes-button" onclick="explodeHearts()">Yes</button>
+</div>
+
+<script>
+  function explodeHearts() {
+    const container = document.querySelector('.storybook-container');
+    for(let i=0; i<30; i++) {
+      const heart = document.createElement('div');
+      heart.classList.add('heart');
+      heart.style.left = `${50 + Math.random() * 200 - 100}px`;
+      heart.style.top = `200px`;
+      heart.style.setProperty('--x', `${Math.random() * 200 - 100}px`);
+      container.appendChild(heart);
+
+      setTimeout(() => {
+        heart.remove();
+      }, 1000);
+    }
+  }
+</script>
+
+</body>
+</html>
