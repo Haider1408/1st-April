@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>For You ❤️</title>
+  <style>
+    html, body {
+      height: 100%;
+      margin: 0;
+      font-family: 'Georgia', serif;
+      background-color: #ffe6f0; /* light pink background */
+    }
+
+    /* Page border */
+    .page {
+      height: 100%;
+      box-sizing: border-box;
+      border: 12px solid #ffb6c1; /* soft pink border */
+      padding: 40px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    /* Inner content box */
+    .content {
+      text-align: center;
+      max-width: 700px;
+      background: rgba(255, 255, 255, 0.6);
+      padding: 30px;
+      border-radius: 20px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    }
+
+    h1 {
+      color: #d63384;
+      margin-bottom: 20px;
+    }
+
+    p {
+      font-size: 18px;
+      line-height: 1.6;
+      color: #333;
+    }
+
+    .yes-btn {
+      margin-top: 30px;
+      padding: 12px 25px;
+      font-size: 18px;
+      border: none;
+      border-radius: 30px;
+      background-color: #ff69b4;
+      color: white;
+      cursor: pointer;
+      transition: transform 0.2s ease;
+    }
+
+    .yes-btn:hover {
+      transform: scale(1.1);
+    }
+  </style>
+</head>
+<body>
+
+  <div class="page">
+    <div class="content">
+      <h1>My Love 💖</h1>
+
+      <p>
+        Your heart was my first ever, I never even knew what to do in a relationship
+        but I learned with and for you. I tried doing all the little things and cute efforts
+        but I didn’t actually ask you to be my girlfriend properly just because we felt the same way,
+        and you deserve so much better than that my love.  
+        <br><br>
+        On this day I’d like to say thank you for being my girlfriend for an entire year.
+        Thank you for being so beautiful, kind, supportive, loving, caring, and charismatic.
+      </p>
+
+      <button class="yes-btn" onclick="explodeHearts()">Yes 💕</button>
+    </div>
+  </div>
+
+  <script>
+    function explodeHearts() {
+      for (let i = 0; i < 30; i++) {
+        let heart = document.createElement("div");
+        heart.innerHTML = "❤️";
+        heart.style.position = "fixed";
+        heart.style.left = Math.random() * 100 + "vw";
+        heart.style.top = "50vh";
+        heart.style.fontSize = Math.random() * 20 + 10 + "px";
+        heart.style.animation = "floatUp 2s linear forwards";
+        document.body.appendChild(heart);
+
+        setTimeout(() => heart.remove(), 2000);
+      }
+    }
+  </script>
+
+  <style>
+    @keyframes floatUp {
+      to {
+        transform: translateY(-200px);
+        opacity: 0;
+      }
+    }
+  </style>
+
+</body>
+</html>
