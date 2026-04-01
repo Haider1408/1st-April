@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>For My Love 💗</title>
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        font-family: 'Georgia', serif;
+        background: url('https://www.transparenttextures.com/patterns/flowers.png'), #ffe6f0;
+        background-size: cover;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        overflow: hidden;
+    }
+
+    .card {
+        background: rgba(255, 255, 255, 0.9);
+        padding: 40px;
+        border-radius: 20px;
+        max-width: 600px;
+        text-align: center;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    }
+
+    h1 {
+        color: #ff4d88;
+    }
+
+    p {
+        font-size: 18px;
+        color: #333;
+        line-height: 1.6;
+    }
+
+    .btn {
+        margin-top: 25px;
+        padding: 12px 25px;
+        font-size: 18px;
+        border: none;
+        border-radius: 30px;
+        background: #ff4d88;
+        color: white;
+        cursor: pointer;
+        transition: 0.3s;
+    }
+
+    .btn:hover {
+        background: #ff1a66;
+        transform: scale(1.05);
+    }
+
+    .heart {
+        position: absolute;
+        color: red;
+        font-size: 20px;
+        animation: float 3s linear infinite;
+    }
+
+    @keyframes float {
+        0% {
+            transform: translateY(0) scale(1);
+            opacity: 1;
+        }
+        100% {
+            transform: translateY(-200px) scale(1.5);
+            opacity: 0;
+        }
+    }
+</style>
+</head>
+<body>
+
+<div class="card">
+    <h1>My Love 💖</h1>
+    <p>
+        Your heart was my first ever, I never even knew what to do in a relationship but I learned with and for you. 
+        I tried doing all the little things and cute efforts but I didn’t actually ask you to be my girlfriend properly 
+        just because we felt the same way and you deserve so much better than that my love. 
+
+        On this day I’d like to say thank you for being my girlfriend for an entire year. 
+        Thank you for being so beautiful, kind, supportive, loving, caring, charismatic…
+    </p>
+
+    <button class="btn" onclick="explodeHearts()">Yes 💕</button>
+</div>
+
+<script>
+function explodeHearts() {
+    for (let i = 0; i < 30; i++) {
+        let heart = document.createElement("div");
+        heart.className = "heart";
+        heart.innerHTML = "💖";
+        heart.style.left = Math.random() * window.innerWidth + "px";
+        heart.style.top = Math.random() * window.innerHeight + "px";
+        heart.style.fontSize = (Math.random() * 20 + 10) + "px";
+
+        document.body.appendChild(heart);
+
+        setTimeout(() => {
+            heart.remove();
+        }, 3000);
+    }
+}
+</script>
+
+</body>
+</html>
