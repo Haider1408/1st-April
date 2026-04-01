@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Message</title>
+
+<style>
+  body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: url('https://www.transparenttextures.com/patterns/floral.png'), #ffe4ec;
+    background-size: cover;
+  }
+
+  .container {
+    max-width: 650px;
+    margin: 50px auto;
+    padding: 25px;
+    border-radius: 18px;
+    background: rgba(255, 255, 255, 0.9);
+    border: 3px solid #ffb6c1;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  }
+
+  h2 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  p {
+    line-height: 1.6;
+    text-align: left;
+  }
+
+  .buttons {
+    text-align: center;
+    margin-top: 25px;
+  }
+
+  button {
+    padding: 12px 25px;
+    margin: 10px;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+
+  .yes {
+    background-color: #ff4d6d;
+    color: white;
+  }
+
+  .heart {
+    position: fixed;
+    font-size: 24px;
+    animation: floatUp 1.5s linear forwards;
+  }
+
+  @keyframes floatUp {
+    0% {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+    100% {
+      opacity: 0;
+      transform: translateY(-200px) scale(1.5);
+    }
+  }
+</style>
+</head>
+
+<body>
+
+<div class="container">
+  <h2>💌 A Message For You</h2>
+
+  <p>Your heart was my first ever, and I didn’t truly know what to do in a relationship at the start—but I learned with you, and for you. I tried to show it in all the little ways, in every quiet effort and gesture, even if I never asked you properly. We both felt the same, but you still deserved to be asked the right way… and that’s something I should have done from the beginning. You deserve nothing less than intentional, sincere love—and that’s what I want to give you now.</p>
+
+  <p>On this day, I want to thank you for being my girlfriend for an entire year. Thank you for being beautiful, kind, supportive, loving, caring, charismatic, funny, and so much more than words can capture.</p>
+
+  <p>So let me ask you properly, from the heart:</p>
+
+  <p><strong>Sheza Shah</strong>, over this past year, I’ve felt nothing but love and happiness in our highs, and trust and devotion in our lowest moments. Through everything, what I’ve felt for you has only grown stronger. I want to feel this way for the rest of my life, with you by my side.</p>
+
+  <p><strong>For now, would you make me the happiest man in the world and be my girlfriend?</strong></p>
+
+  <div class="buttons">
+    <button class="yes" onclick="explodeHearts()">Yes 💕</button>
+  </div>
+</div>
+
+<script>
+function explodeHearts() {
+  for (let i = 0; i < 20; i++) {
+    let heart = document.createElement("div");
+    heart.classList.add("heart");
+    heart.innerHTML = "❤️";
+
+    heart.style.left = Math.random() * window.innerWidth + "px";
+    heart.style.top = Math.random() * window.innerHeight + "px";
+    heart.style.fontSize = (20 + Math.random() * 20) + "px";
+
+    document.body.appendChild(heart);
+
+    setTimeout(() => {
+      heart.remove();
+    }, 1500);
+  }
+}
+</script>
+
+</body>
+</html>
